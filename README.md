@@ -6,8 +6,13 @@ The scripts were tested on Azure using the virtual machine image SUSE Linux Ente
 
 # Usage
 
+The IP address below can be obtained from the output of `tail /etc/hosts`.
+
 ```
+sudo zypper -n install git
+git clone https://github.com/vjrantal/iotedge-suse-build.git && cd iotedge-suse-build
 sudo ./prepare.sh
+sudo systemctl start docker
 sudo docker build -t vjrantal/iotedge-suse-build . --add-host=smt-azure.susecloud.net:104.45.17.148
 sudo docker run --add-host=smt-azure.susecloud.net:104.45.17.148 -it vjrantal/iotedge-suse-build
 ```

@@ -18,6 +18,8 @@ RUN zypper -n install make cmake rpmbuild curl libopenssl-devel
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
+# Can be updated to point to the official repository after fix is merged for:
+# https://github.com/Azure/iotedge/issues/938
 RUN git clone -b suse --single-branch https://github.com/vjrantal/iotedge.git
 
 WORKDIR /iotedge/edgelet
